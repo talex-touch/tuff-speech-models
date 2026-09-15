@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "tuff-asr-zh",
+  "version": "0.2.0",
+  "name": "Tuff ASR zh (q5_1)",
+  "description": "Size-optimized sibling of tuff-asr-zh 0.1.0: the same whisper-base weights, quantized to q5_1. It exists because the unquantized bundle is 148 MB to download, which is a real first-run cost, and a 60 MB bundle that transcribes the same audio about as well is a better trade for a desktop app. Measurements on two utterances found no quality difference — each version misses one distinct character on the first, and both miss the same two on the second — which is too little evidence to call parity, so this release is installable but is not the catalog default. No training was performed; this is a quantization, not a new model. See docs/versions/tuff-asr-zh-0.2.0.md.",
+  "engine": "whisper-cpp",
+  "engineMinVersion": "1.7.0",
+  "languages": ["zh", "en"],
+  "defaultLanguage": "zh",
+  "runtime": {
+    "kind": "ggml",
+    "file": "tuff-asr-zh-0.2.0-q5_1.bin",
+    "bytes": 59707625,
+    "sha256": "80147c665f9ac54ab8c3c7f55da90ac030ea40610495ba4dd0aa6304fd49d731"
+  },
+  "quantization": "q5_1",
+  "capabilities": {
+    "stream": true,
+    "upload": true,
+    "timestamps": true,
+    "punctuation": true,
+    "itn": false
+  },
+  "text": {
+    "script": "traditional",
+    "requiresSimplifiedConversion": true,
+    "punctuationPolicy": "model"
+  },
+  "source": {
+    "provider": "github-releases",
+    "repo": "talex-touch/tuff-speech-models",
+    "url": "https://github.com/talex-touch/tuff-speech-models/releases/download/tuff-asr-zh-0.2.0/tuff-asr-zh-0.2.0-q5_1.bin",
+    "upstreamVersion": "whisper-base",
+    "derivedFrom": "tuff-asr-zh@0.1.0"
+  },
+  "license": {
+    "spdx": "MIT",
+    "redistributable": true
+  },
+  "benchmark": {
+    "host": "Apple M4 Pro (arm64, Metal)",
+    "dataset": "2 synthetic Mandarin utterances via macOS say -v Tingting (3.44 s and 2.9 s), 5 repetitions per configuration",
+    "sampleCount": 2,
+    "rtf": 0.16,
+    "notes": "NOT a benchmark — 2 utterances cannot establish parity, and this is recorded so the claim is not mistaken for one. Decoded with the runtime's own flags (whisper-cli -oj, timestamps enabled) because that flag changes the transcript, not just the output format; plain '-nt' runs produce different text from the same weights. All 5 repetitions of each configuration were byte-identical. Utterance 1 (今天天气很好我们去公园散步吧): 0.1.0 -> ...去公元散步吧 (公元 wrong); 0.2.0 -> 今天天起很好我们去公园散步吧 (起 wrong, 公园 right). One distinct error each. Utterance 2 (明天下午三点开会记得带上项目文档): both -> 明天下午三点开会计的戴上项目文档, differing only in the closing punctuation. Therefore: no quality difference established in either direction, and the real error source is whisper base itself, not the quantization."
+  }
+}

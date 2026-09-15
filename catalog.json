@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-15T14:48:24.701Z",
+  "generatedAt": "2026-09-15T15:15:56.581Z",
   "models": [
     {
       "id": "tuff-asr-zh",
@@ -15,6 +15,21 @@
       "bytes": 147951465,
       "sha256": "a06b133985f90319fd2e7c8bc02fba543aef34d09ac1e3fa59d86a131d7b2060",
       "default": true,
+      "redistributable": true
+    },
+    {
+      "id": "tuff-asr-zh",
+      "version": "0.2.0",
+      "name": "Tuff ASR zh (q5_1)",
+      "engine": "whisper-cpp",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "descriptor": "models/tuff-asr-zh/0.2.0/model.json",
+      "bytes": 59707625,
+      "sha256": "dca16110532b09af766748a5ee67227018268837f4601b1b770302ca2afea371",
+      "default": false,
       "redistributable": true
     },
     {
