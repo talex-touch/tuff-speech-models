@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "tuff-asr-zh-tiny",
+  "version": "0.1.0",
+  "name": "Tuff ASR zh tiny (fine-tuned)",
+  "description": "Talex-Touch's first first-party model: whisper-tiny adapted on 8300 ST-CMDS Mandarin utterances, one epoch on MPS. It beats the current default on the domains measured and, because it was trained on Simplified transcripts, emits Simplified Chinese without needing the primer the whisper-base line requires. Installable but not the catalog default: 62 evaluated utterances are not enough to justify replacing a 74M-parameter model with a 39M one in general. No third-party proprietary weights are involved.",
+  "engine": "whisper-cpp",
+  "engineMinVersion": "1.7.0",
+  "languages": ["zh"],
+  "defaultLanguage": "zh",
+  "runtime": {
+    "kind": "ggml",
+    "file": "tuff-asr-zh-tiny-0.1.0-f16.bin",
+    "bytes": 77711868,
+    "sha256": "cb85ba1988bcd4dc40cf5afabfa690504b384761788e2a50dafd2a6b0e1ae352"
+  },
+  "quantization": "none",
+  "capabilities": {
+    "stream": true,
+    "upload": true,
+    "timestamps": true,
+    "punctuation": true,
+    "itn": false
+  },
+  "text": {
+    "script": "simplified",
+    "requiresSimplifiedConversion": false,
+    "punctuationPolicy": "model"
+  },
+  "source": {
+    "provider": "talex-touch",
+    "repo": "talex-touch/tuff-speech-models",
+    "url": "https://github.com/talex-touch/tuff-speech-models/releases/download/tuff-asr-zh-tiny-0.1.0/tuff-asr-zh-tiny-0.1.0-f16.bin",
+    "upstreamVersion": "whisper-tiny",
+    "derivedFrom": "openai/whisper-tiny fine-tuned on ST-CMDS (OpenSLR 38)"
+  },
+  "license": {
+    "spdx": "MIT",
+    "redistributable": true
+  },
+  "benchmark": {
+    "host": "Apple M4 Pro (arm64, Metal, MPS training)",
+    "dataset": "ST-CMDS (OpenSLR 38), 8300 utterances trained, 300 held out; 60 of the held-out utterances scored",
+    "sampleCount": 60,
+    "cer": 0.1574,
+    "notes": "Scored with whisper-cli and the flags Tuff itself uses, so this is the product's number rather than a Python-side one. Same 60 held-out utterances: this model 0.1574, whisper-base 0.2018, whisper-tiny 0.2868. On two out-of-domain formal-TTS utterances it scored CER 0.000 where whisper-base scored 0.071 and 0.188. Caveats that bound the claim: the held-out set is in-domain (crowd-sourced conversational Mandarin), 60 utterances is a modest sample, only two out-of-domain utterances were checked, and the fine-tuning data is unfiltered web speech whose register the model can reproduce. Training wall time 665 s for 1038 steps at batch 8."
+  }
+}

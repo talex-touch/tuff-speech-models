@@ -31,6 +31,8 @@ tools/lib/manifest.mjs        canonical bundle hashing shared by both tools
 docs/versions/<id>-<version>.md
                               human-readable notes per published version
 docs/training.md              recipe for training a model Talex-Touch owns
+training/                     the scripts that recipe was executed with, and the
+                              raw outputs of the run that published tuff-asr-zh-tiny
 ```
 
 Weight files are **never committed**. `.gitignore` excludes `*.bin`, `*.onnx`
@@ -233,6 +235,8 @@ value, so `git diff` never shows churn from a rebuild.
 | id | version | engine | license | default | notes |
 | --- | --- | --- | --- | --- | --- |
 | `tuff-asr-zh` | 0.1.0 | `whisper-cpp` | MIT | **yes** | [docs/versions/tuff-asr-zh-0.1.0.md](./docs/versions/tuff-asr-zh-0.1.0.md) |
+| `tuff-asr-zh` | 0.2.0 | `whisper-cpp` | MIT | no | [docs/versions/tuff-asr-zh-0.2.0.md](./docs/versions/tuff-asr-zh-0.2.0.md) |
+| `tuff-asr-zh-tiny` | 0.1.0 | `whisper-cpp` | MIT | no | [docs/versions/tuff-asr-zh-tiny-0.1.0.md](./docs/versions/tuff-asr-zh-tiny-0.1.0.md) |
 | `whisper-base` | 1.0.0 | `whisper-cpp` | MIT | no | [docs/versions/whisper-base-1.0.0.md](./docs/versions/whisper-base-1.0.0.md) |
 | `whisper-tiny` | 1.0.0 | `whisper-cpp` | MIT | no | [docs/versions/whisper-tiny-1.0.0.md](./docs/versions/whisper-tiny-1.0.0.md) |
 

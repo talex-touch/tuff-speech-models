@@ -1,12 +1,16 @@
 # Training a Chinese ASR model Talex-Touch owns
 
-> **Status: recipe only. Nothing in this document has been executed.**
-> No training run has been performed for this repository. Every command below is
-> the command that *would* be run, written down now so the path is reviewable
-> before anyone spends GPU time or commits a bundle. The hardware and time
-> figures in [§8](#8-hardware-and-time-estimates) are engineering estimates, not
-> measurements — the only measured numbers in this repository are the ones
-> recorded in `models/*/*/model.json` and `docs/versions/`.
+> **Status: executed.** The Phase 1 pipeline below has been run and its result is
+> published as `tuff-asr-zh-tiny@0.1.0`
+> ([notes](./versions/tuff-asr-zh-tiny-0.1.0.md)). The runnable scripts and their
+> raw outputs live in [`training/`](../training): the commands written here were
+> the reviewable plan and remain the shape of the pipeline, but where they differ
+> from `training/`, the script is what actually ran — §4 records the three
+> differences and why each one existed.
+>
+> The hardware and time figures in [§8](#8-hardware-and-time-estimates) are still
+> engineering estimates except where a measured run is cited; measured numbers
+> live in `models/*/*/model.json`, `docs/versions/`, and `training/*.json`.
 
 The goal is a Mandarin dictation model whose weights Talex-Touch owns outright,
 so that the delivered product no longer depends on a third party's license,
@@ -111,11 +115,25 @@ Whisper's encoder-decoder pretraining, RNN-T/Conv-Transducer alternatives):
    describable today as `auxiliary[]` entries with `role`, `file`, `bytes` and
    `sha256`. They are part of the bundle digest.
 
-## 4. Phase 1 — fine-tune whisper-base and package it as ggml
+## 4. Phase 1 — fine-tune whisper and package it as ggml
 
-Roughly: prepare AISHELL-1 + THCHS-30 (+ Common Voice zh-CN), fine-tune
-`openai/whisper-base` with LoRA or full fine-tuning, merge, convert to ggml, and
-publish as `tuff-asr-zh@0.2.0` with `engine: whisper-cpp`.
+**Executed 2026-09-15.** The plan below was followed with three deliberate
+departures, each recorded because it cost time to establish:
+
+- **Corpus: ST-CMDS (OpenSLR 38), not AISHELL-1 + THCHS-30.** One 8.2 GB download
+  with no registration, and enough scope to produce a first result.
+- **Base model: `openai/whisper-tiny`, not `whisper-base`.** The question this run
+  had to answer was whether *our pipeline* yields a model that beats the shipped
+  default. A tiny-based run answers it in 11 minutes rather than hours.
+- **Conversion: `training/convert_to_ggml.py` instead of the stock converter
+  call.** `transformers` 5.x writes neither `vocab.json` nor
+  `added_tokens.json`, both of which whisper.cpp's converter requires; the
+  wrapper re-emits them first.
+
+Result: `tuff-asr-zh-tiny@0.1.0` — held-out CER **0.1574** against the shipped
+default's **0.2018**, on identical audio with the flags Tuff uses. Caveats that
+bound it are in the version notes. The commands below remain the plan they were
+written as.
 
 ```bash
 # --- environment ---------------------------------------------------------

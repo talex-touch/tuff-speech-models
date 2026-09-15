@@ -1,0 +1,14 @@
+{
+  "base_model": "openai/whisper-tiny",
+  "corpus_dir": "ST-CMDS-20170001_1-OS",
+  "train_utterances": 8300,
+  "held_out_utterances": 300,
+  "eval_sample_size": 100,
+  "baseline_cer": 0.571,
+  "fine_tuned_cer": 0.1919,
+  "steps": 1038,
+  "batch_size": 8,
+  "lr": 1e-05,
+  "device": "mps",
+  "wall_seconds": 664.9
+}

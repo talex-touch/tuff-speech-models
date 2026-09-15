@@ -1,0 +1,747 @@
+{
+  "summary": {
+    "fine-tuned": {
+      "cer": 0.1574,
+      "blank": 0,
+      "n": 60
+    },
+    "tiny": {
+      "cer": 0.2868,
+      "blank": 0,
+      "n": 60
+    },
+    "base": {
+      "cer": 0.2018,
+      "blank": 0,
+      "n": 60
+    }
+  },
+  "details": {
+    "fine-tuned": [
+      {
+        "reference": "说我伤害你就冤枉我了",
+        "hypothesis": "说我伤害你就冤枉我了"
+      },
+      {
+        "reference": "晚饭后在院内溜了一圈儿",
+        "hypothesis": "晚饭后在院内溜了一圈"
+      },
+      {
+        "reference": "你一将军我就无路可退了帅死了",
+        "hypothesis": "你一将军我就无诺可退了耍死了"
+      },
+      {
+        "reference": "给他们诉诉苦的地方",
+        "hypothesis": "给他们速速苦的地方"
+      },
+      {
+        "reference": "我爸不允许我谈恋爱的",
+        "hypothesis": "我爸不允许我谈恋爱的"
+      },
+      {
+        "reference": "比日军强就行了",
+        "hypothesis": "比日均强就行了"
+      },
+      {
+        "reference": "你要永远陪我我俩都不能死",
+        "hypothesis": "你要永远陪我我俩都不能死"
+      },
+      {
+        "reference": "减肥是个永久不能忽视的问题",
+        "hypothesis": "减肥是个永久不能忽视的问题"
+      },
+      {
+        "reference": "多少人说要捐款救助送医院",
+        "hypothesis": "多少人说要捐款救助送医院"
+      },
+      {
+        "reference": "你可以躲在体院兄弟后面",
+        "hypothesis": "你可以躲在体院兄弟后面"
+      },
+      {
+        "reference": "李娟朋友过生日",
+        "hypothesis": "李娟朋友过生日"
+      },
+      {
+        "reference": "下次你就是生气我也会摸你胸",
+        "hypothesis": "下次你就是生气我也会摸你胸"
+      },
+      {
+        "reference": "我就在南门桥大附近",
+        "hypothesis": "我就在南门桥大附近"
+      },
+      {
+        "reference": "朋友圈子里的人都劝他和好",
+        "hypothesis": "朋友圈子里的人都劝他好好"
+      },
+      {
+        "reference": "蓝色饰品盒是雪雪送我的生日礼物",
+        "hypothesis": "蓝色视频和视学雪送我的生日礼物"
+      },
+      {
+        "reference": "我就知道陆军总院",
+        "hypothesis": "我就知道陆军总院"
+      },
+      {
+        "reference": "天籁的云系统叫我陈霞军",
+        "hypothesis": "天赖的渊系统叫我陈侠君"
+      },
+      {
+        "reference": "金勋会员卡使用情况",
+        "hypothesis": "金薰会员卡是用情况"
+      },
+      {
+        "reference": "听的我脑袋嗡嗡的",
+        "hypothesis": "听的我脑袋翁翁的"
+      },
+      {
+        "reference": "建的是一个改装群而已",
+        "hypothesis": "简的是一个改装群而已"
+      },
+      {
+        "reference": "我正在你看千万富翁",
+        "hypothesis": "我正在你看千万富翁"
+      },
+      {
+        "reference": "浮石镇进行罗成忠黄永通",
+        "hypothesis": "福石镇进行螺城中黄泳通"
+      },
+      {
+        "reference": "其实我只要情况允许",
+        "hypothesis": "其实我只要情况允许"
+      },
+      {
+        "reference": "我旋律和歌词都稀饭",
+        "hypothesis": "我选丽和歌词都吸饭"
+      },
+      {
+        "reference": "你明天准备和王佳慧告白不",
+        "hypothesis": "你明天准备和王家会告白我"
+      },
+      {
+        "reference": "去刷牙然后准备睡",
+        "hypothesis": "去刷牙然后准备睡"
+      },
+      {
+        "reference": "现在我们的首要愿望就是能怀上",
+        "hypothesis": "现在我们的舍冤枉就是能怀上"
+      },
+      {
+        "reference": "曹雪芹文笔的我不需要找我",
+        "hypothesis": "草雪琴文笔的我不需要找我"
+      },
+      {
+        "reference": "而且她也老乱说她最近穷",
+        "hypothesis": "而且他也老乱说他最近穷"
+      },
+      {
+        "reference": "四级卡片英语单词",
+        "hypothesis": "四级卡片英语单词"
+      },
+      {
+        "reference": "准备去神龙游泳",
+        "hypothesis": "准备去神龙游泳"
+      },
+      {
+        "reference": "长岛应该有烈日英雄吧",
+        "hypothesis": "长岛应该有练日英雄吧"
+      },
+      {
+        "reference": "那这个均匀设计表",
+        "hypothesis": "那这个均匀设计表"
+      },
+      {
+        "reference": "那我允许你抱着我睡",
+        "hypothesis": "那我允许你抱着我睡"
+      },
+      {
+        "reference": "司淮北星光黄香君",
+        "hypothesis": "师怀北新光黄香军"
+      },
+      {
+        "reference": "日系雪纺连衣裙",
+        "hypothesis": "日气雪纺连衣裙"
+      },
+      {
+        "reference": "而不是第一时间加名词的就是",
+        "hypothesis": "而不是第一时间将名词的就是"
+      },
+      {
+        "reference": "礼拜六洗了的床单放在洗衣机甩干",
+        "hypothesis": "离拜六洗饿的床单放在洗衣机甩干"
+      },
+      {
+        "reference": "如果是平滑三缩则等待黄白线金叉",
+        "hypothesis": "如果是平滑三搜则等待黄白线经差"
+      },
+      {
+        "reference": "都是李春霞你非要去石家庄",
+        "hypothesis": "都是李春霞你非要去十佳装"
+      },
+      {
+        "reference": "央行宣布明日起非对称降息",
+        "hypothesis": "阳行宣布明日起飞队称向西"
+      },
+      {
+        "reference": "我要诸葛亮死啊",
+        "hypothesis": "我要住个量死啊"
+      },
+      {
+        "reference": "二号过后我改了名就想代练雪儿",
+        "hypothesis": "二号过后我改了名就想带练雪儿啊"
+      },
+      {
+        "reference": "那些附庸风雅的所为",
+        "hypothesis": "那些复拥风雅的所谓"
+      },
+      {
+        "reference": "列为炸掉三峡预案大家准备一下",
+        "hypothesis": "列为杂料三峡约按大家准备一下"
+      },
+      {
+        "reference": "得到你的允许我就放心多了",
+        "hypothesis": "得到你的允许我就放心多了"
+      },
+      {
+        "reference": "前面有个黄娃娃",
+        "hypothesis": "前面有个黄娃娃娃"
+      },
+      {
+        "reference": "你有没有那个医院的搞牙科的电话",
+        "hypothesis": "你有没有那个医院的搞牙科电话"
+      },
+      {
+        "reference": "流黄水大约一个多星期",
+        "hypothesis": "刘黄水大约一个多星期"
+      },
+      {
+        "reference": "两个人出去培养啥感情",
+        "hypothesis": "两个人出去培养啥感情"
+      },
+      {
+        "reference": "测完把卡给我或者王勇",
+        "hypothesis": "色弯八卡给我或者网用"
+      },
+      {
+        "reference": "都化了月节日快乐一会儿约会",
+        "hypothesis": "都话了约节视快乐一会约会"
+      },
+      {
+        "reference": "那是我给杨宝君的建议",
+        "hypothesis": "那是我给杨宝君的建议"
+      },
+      {
+        "reference": "那群熊孩子把我们耍了",
+        "hypothesis": "那些兄孩子把我们耍了"
+      },
+      {
+        "reference": "那你没了这个你还能雌黄什么",
+        "hypothesis": "那你没了这个你还能辞黄什么"
+      },
+      {
+        "reference": "那娃子脑子是不粘是浆糊了",
+        "hypothesis": "那娃子脑子是不是连上降火了"
+      },
+      {
+        "reference": "明天一个住黄淮宾馆",
+        "hypothesis": "明天一个住黄淮宾馆"
+      },
+      {
+        "reference": "七八把瑞士军刀呢惹我赖皮",
+        "hypothesis": "七八八日视军东呢惹我乱皮"
+      },
+      {
+        "reference": "我也对小爱妹纸凶一次了扯平",
+        "hypothesis": "我也对小爱妹子凶一次了扯瓶"
+      },
+      {
+        "reference": "雪云对你那么凶",
+        "hypothesis": "损匀对你那么胸"
+      }
+    ],
+    "tiny": [
+      {
+        "reference": "说我伤害你就冤枉我了",
+        "hypothesis": "说我伤害你就愿望我了。"
+      },
+      {
+        "reference": "晚饭后在院内溜了一圈儿",
+        "hypothesis": "玩法后再越内留旅船。"
+      },
+      {
+        "reference": "你一将军我就无路可退了帅死了",
+        "hypothesis": "以一将军我就无诺可退了率死了。"
+      },
+      {
+        "reference": "给他们诉诉苦的地方",
+        "hypothesis": "给他们数速苦的地方。"
+      },
+      {
+        "reference": "我爸不允许我谈恋爱的",
+        "hypothesis": "我爸不允许我谈恋爱的。"
+      },
+      {
+        "reference": "比日军强就行了",
+        "hypothesis": "比日君强就行了。"
+      },
+      {
+        "reference": "你要永远陪我我俩都不能死",
+        "hypothesis": "你要永远陪我,我俩都不能死。"
+      },
+      {
+        "reference": "减肥是个永久不能忽视的问题",
+        "hypothesis": "简法是个永久不能忽视的问题。"
+      },
+      {
+        "reference": "多少人说要捐款救助送医院",
+        "hypothesis": "多少人说要捐款救助送医院"
+      },
+      {
+        "reference": "你可以躲在体院兄弟后面",
+        "hypothesis": "你可以躲在体院兄弟后面。"
+      },
+      {
+        "reference": "李娟朋友过生日",
+        "hypothesis": "李军旁有过生日。"
+      },
+      {
+        "reference": "下次你就是生气我也会摸你胸",
+        "hypothesis": "下次你就是生气我也会摸你胸。"
+      },
+      {
+        "reference": "我就在南门桥大附近",
+        "hypothesis": "我就在南门朝大附近"
+      },
+      {
+        "reference": "朋友圈子里的人都劝他和好",
+        "hypothesis": "普通物圈子里的人都圈他合好。"
+      },
+      {
+        "reference": "蓝色饰品盒是雪雪送我的生日礼物",
+        "hypothesis": "蓝色试评和试学写送我的生日礼物。"
+      },
+      {
+        "reference": "我就知道陆军总院",
+        "hypothesis": "我就知道陆军总愿。"
+      },
+      {
+        "reference": "天籁的云系统叫我陈霞军",
+        "hypothesis": "天来的运系统叫我陈下去。"
+      },
+      {
+        "reference": "金勋会员卡使用情况",
+        "hypothesis": "金薰会员凯使用情况。"
+      },
+      {
+        "reference": "听的我脑袋嗡嗡的",
+        "hypothesis": "听得我脑袋风风的"
+      },
+      {
+        "reference": "建的是一个改装群而已",
+        "hypothesis": "简单是一个改装权儿椅。"
+      },
+      {
+        "reference": "我正在你看千万富翁",
+        "hypothesis": "我正在你看千万夫"
+      },
+      {
+        "reference": "浮石镇进行罗成忠黄永通",
+        "hypothesis": "普时正进行螺成中黄勇通。"
+      },
+      {
+        "reference": "其实我只要情况允许",
+        "hypothesis": "其实我只要情况允许。"
+      },
+      {
+        "reference": "我旋律和歌词都稀饭",
+        "hypothesis": "我选丽何歌词都欺贩。"
+      },
+      {
+        "reference": "你明天准备和王佳慧告白不",
+        "hypothesis": "您明天准备和王家会告白我。"
+      },
+      {
+        "reference": "去刷牙然后准备睡",
+        "hypothesis": "去刷牙然后准备碎。"
+      },
+      {
+        "reference": "现在我们的首要愿望就是能怀上",
+        "hypothesis": "现在我们都说别忘了就能怀上。"
+      },
+      {
+        "reference": "曹雪芹文笔的我不需要找我",
+        "hypothesis": "朝雪琴文笔的我不需要找我。"
+      },
+      {
+        "reference": "而且她也老乱说她最近穷",
+        "hypothesis": "而且他也老乱说他最近从"
+      },
+      {
+        "reference": "四级卡片英语单词",
+        "hypothesis": "四极卡片意语单词"
+      },
+      {
+        "reference": "准备去神龙游泳",
+        "hypothesis": "准备去神龙游用。"
+      },
+      {
+        "reference": "长岛应该有烈日英雄吧",
+        "hypothesis": "长道应该有列入英雄吧"
+      },
+      {
+        "reference": "那这个均匀设计表",
+        "hypothesis": "那这个均匀设计表"
+      },
+      {
+        "reference": "那我允许你抱着我睡",
+        "hypothesis": "那我允许你帮着我睡"
+      },
+      {
+        "reference": "司淮北星光黄香君",
+        "hypothesis": "是华北新光黄相军。"
+      },
+      {
+        "reference": "日系雪纺连衣裙",
+        "hypothesis": "日期学法连一群"
+      },
+      {
+        "reference": "而不是第一时间加名词的就是",
+        "hypothesis": "而不是第一时间将名词的就是"
+      },
+      {
+        "reference": "礼拜六洗了的床单放在洗衣机甩干",
+        "hypothesis": "离拜六洗浪的床单放在洗衣机甩干。"
+      },
+      {
+        "reference": "如果是平滑三缩则等待黄白线金叉",
+        "hypothesis": "如果是平华三搜则等待黄白线经差"
+      },
+      {
+        "reference": "都是李春霞你非要去石家庄",
+        "hypothesis": "都是李春啟,以非要去时加装。"
+      },
+      {
+        "reference": "央行宣布明日起非对称降息",
+        "hypothesis": "央行宣布,迷日起飞队称相夕。"
+      },
+      {
+        "reference": "我要诸葛亮死啊",
+        "hypothesis": "我要住个量死"
+      },
+      {
+        "reference": "二号过后我改了名就想代练雪儿",
+        "hypothesis": "二后过后,我改了名,就想带列学。"
+      },
+      {
+        "reference": "那些附庸风雅的所为",
+        "hypothesis": "那些复用风亚的所谓。"
+      },
+      {
+        "reference": "列为炸掉三峡预案大家准备一下",
+        "hypothesis": "列为杂料山下约,大家准备一下。"
+      },
+      {
+        "reference": "得到你的允许我就放心多了",
+        "hypothesis": "得到你的允许我就放心多了。"
+      },
+      {
+        "reference": "前面有个黄娃娃",
+        "hypothesis": "前面有个黄马了"
+      },
+      {
+        "reference": "你有没有那个医院的搞牙科的电话",
+        "hypothesis": "以有没有那个议员的稿亚客电话。"
+      },
+      {
+        "reference": "流黄水大约一个多星期",
+        "hypothesis": "留黄水大约1个多星期"
+      },
+      {
+        "reference": "两个人出去培养啥感情",
+        "hypothesis": "两个人出去培养啥感情"
+      },
+      {
+        "reference": "测完把卡给我或者王勇",
+        "hypothesis": "这回来把卡给我或者我用。"
+      },
+      {
+        "reference": "都化了月节日快乐一会儿约会",
+        "hypothesis": "都话了,越节试快乐,一会儿约会。"
+      },
+      {
+        "reference": "那是我给杨宝君的建议",
+        "hypothesis": "那是我给阳保军的建议。"
+      },
+      {
+        "reference": "那群熊孩子把我们耍了",
+        "hypothesis": "那进行孩子把我们耍了。"
+      },
+      {
+        "reference": "那你没了这个你还能雌黄什么",
+        "hypothesis": "那你没了这个你还能撤黄什么?"
+      },
+      {
+        "reference": "那娃子脑子是不粘是浆糊了",
+        "hypothesis": "那把子脑子试不顺面上降火了。"
+      },
+      {
+        "reference": "明天一个住黄淮宾馆",
+        "hypothesis": "明天一个珠黄怀病管"
+      },
+      {
+        "reference": "七八把瑞士军刀呢惹我赖皮",
+        "hypothesis": "七八八认识军当呢,揉我乃皮。"
+      },
+      {
+        "reference": "我也对小爱妹纸凶一次了扯平",
+        "hypothesis": "我也对小爱美植 兄弟色了彻心。"
+      },
+      {
+        "reference": "雪云对你那么凶",
+        "hypothesis": "转运对你那么凶。"
+      }
+    ],
+    "base": [
+      {
+        "reference": "说我伤害你就冤枉我了",
+        "hypothesis": "说我伤害你就冤枉我了。"
+      },
+      {
+        "reference": "晚饭后在院内溜了一圈儿",
+        "hypothesis": "晚饭后在月内溜了一传"
+      },
+      {
+        "reference": "你一将军我就无路可退了帅死了",
+        "hypothesis": "你一将军我就无路可退了,晒死了。"
+      },
+      {
+        "reference": "给他们诉诉苦的地方",
+        "hypothesis": "给他们速速苦的地方。"
+      },
+      {
+        "reference": "我爸不允许我谈恋爱的",
+        "hypothesis": "我爸不允许我谈恋爱的。"
+      },
+      {
+        "reference": "比日军强就行了",
+        "hypothesis": "比日军强就行了。"
+      },
+      {
+        "reference": "你要永远陪我我俩都不能死",
+        "hypothesis": "你要永远陪我,我俩都不能死。"
+      },
+      {
+        "reference": "减肥是个永久不能忽视的问题",
+        "hypothesis": "简伐是个永久不能忽视的问题。"
+      },
+      {
+        "reference": "多少人说要捐款救助送医院",
+        "hypothesis": "多少人说要捐款救助送医院?"
+      },
+      {
+        "reference": "你可以躲在体院兄弟后面",
+        "hypothesis": "你可以躲在体院兄弟后面。"
+      },
+      {
+        "reference": "李娟朋友过生日",
+        "hypothesis": "李娟朋友过生日。"
+      },
+      {
+        "reference": "下次你就是生气我也会摸你胸",
+        "hypothesis": "下次你就是生气我也会摸你胸。"
+      },
+      {
+        "reference": "我就在南门桥大附近",
+        "hypothesis": "我就在南门桥大附近。"
+      },
+      {
+        "reference": "朋友圈子里的人都劝他和好",
+        "hypothesis": "朋友圈子里的人都劝他好好。"
+      },
+      {
+        "reference": "蓝色饰品盒是雪雪送我的生日礼物",
+        "hypothesis": "藍色视频和视学界送我的生日礼物。"
+      },
+      {
+        "reference": "我就知道陆军总院",
+        "hypothesis": "我就知道陆军总院。"
+      },
+      {
+        "reference": "天籁的云系统叫我陈霞军",
+        "hypothesis": "天赖的云系统叫我陈下去。"
+      },
+      {
+        "reference": "金勋会员卡使用情况",
+        "hypothesis": "金薰会员卡使用情况。"
+      },
+      {
+        "reference": "听的我脑袋嗡嗡的",
+        "hypothesis": "听得我脑袋轰轰的。"
+      },
+      {
+        "reference": "建的是一个改装群而已",
+        "hypothesis": "简得是一个改装裙而已。"
+      },
+      {
+        "reference": "我正在你看千万富翁",
+        "hypothesis": "我正在你看千万富哦。"
+      },
+      {
+        "reference": "浮石镇进行罗成忠黄永通",
+        "hypothesis": "扶实战进行罗成中黄永通。"
+      },
+      {
+        "reference": "其实我只要情况允许",
+        "hypothesis": "其实我只要情况允许"
+      },
+      {
+        "reference": "我旋律和歌词都稀饭",
+        "hypothesis": "我旋律和歌词都西范。"
+      },
+      {
+        "reference": "你明天准备和王佳慧告白不",
+        "hypothesis": "你明天准备和王家会告白我。"
+      },
+      {
+        "reference": "去刷牙然后准备睡",
+        "hypothesis": "去刷牙然后准备碎。"
+      },
+      {
+        "reference": "现在我们的首要愿望就是能怀上",
+        "hypothesis": "现在我们的说要别忘就是能怀上。"
+      },
+      {
+        "reference": "曹雪芹文笔的我不需要找我",
+        "hypothesis": "朝雪琴闻比的我不需要找我。"
+      },
+      {
+        "reference": "而且她也老乱说她最近穷",
+        "hypothesis": "而且他也老乱说他最近穷。"
+      },
+      {
+        "reference": "四级卡片英语单词",
+        "hypothesis": "四极卡片银鱼单磁。"
+      },
+      {
+        "reference": "准备去神龙游泳",
+        "hypothesis": "准备去神龙游泳。"
+      },
+      {
+        "reference": "长岛应该有烈日英雄吧",
+        "hypothesis": "尝到应该有烈日英雄吧。"
+      },
+      {
+        "reference": "那这个均匀设计表",
+        "hypothesis": "那这个均云设计表。"
+      },
+      {
+        "reference": "那我允许你抱着我睡",
+        "hypothesis": "那我允许你抱着我睡。"
+      },
+      {
+        "reference": "司淮北星光黄香君",
+        "hypothesis": "思怀北新光皇乡君"
+      },
+      {
+        "reference": "日系雪纺连衣裙",
+        "hypothesis": "日系学访连一群。"
+      },
+      {
+        "reference": "而不是第一时间加名词的就是",
+        "hypothesis": "而不是第一时间加名字的就是。"
+      },
+      {
+        "reference": "礼拜六洗了的床单放在洗衣机甩干",
+        "hypothesis": "离拜六袭乐的长单放在袭衣机甩干。"
+      },
+      {
+        "reference": "如果是平滑三缩则等待黄白线金叉",
+        "hypothesis": "如果是平华三缩则等待黄白现金差。"
+      },
+      {
+        "reference": "都是李春霞你非要去石家庄",
+        "hypothesis": "都是李春霞,你非要去实家装?"
+      },
+      {
+        "reference": "央行宣布明日起非对称降息",
+        "hypothesis": "央行宣布明日起飞队趁向西。"
+      },
+      {
+        "reference": "我要诸葛亮死啊",
+        "hypothesis": "我要住个辆死啊。"
+      },
+      {
+        "reference": "二号过后我改了名就想代练雪儿",
+        "hypothesis": "2号过后我改了名,就想带链学。"
+      },
+      {
+        "reference": "那些附庸风雅的所为",
+        "hypothesis": "那些富庸风亚的所谓。"
+      },
+      {
+        "reference": "列为炸掉三峡预案大家准备一下",
+        "hypothesis": "列为杂料山峡鱼案,大家准备一下。"
+      },
+      {
+        "reference": "得到你的允许我就放心多了",
+        "hypothesis": "得到你的允许我就放心多了。"
+      },
+      {
+        "reference": "前面有个黄娃娃",
+        "hypothesis": "前面有个黄马吧。"
+      },
+      {
+        "reference": "你有没有那个医院的搞牙科的电话",
+        "hypothesis": "有没有那个医院的狗亚克电话?"
+      },
+      {
+        "reference": "流黄水大约一个多星期",
+        "hypothesis": "流黄水大约一个多星期。"
+      },
+      {
+        "reference": "两个人出去培养啥感情",
+        "hypothesis": "两个人出去,培养啥感情。"
+      },
+      {
+        "reference": "测完把卡给我或者王勇",
+        "hypothesis": "这玩法卡几我或者网友。"
+      },
+      {
+        "reference": "都化了月节日快乐一会儿约会",
+        "hypothesis": "都画了月节日快乐,一会儿约会。"
+      },
+      {
+        "reference": "那是我给杨宝君的建议",
+        "hypothesis": "那是我给杨宝军的建议。"
+      },
+      {
+        "reference": "那群熊孩子把我们耍了",
+        "hypothesis": "那些新孩子把我们耍了。"
+      },
+      {
+        "reference": "那你没了这个你还能雌黄什么",
+        "hypothesis": "那你没了做个你还能辞黄什么?"
+      },
+      {
+        "reference": "那娃子脑子是不粘是浆糊了",
+        "hypothesis": "那瓦子脑子是不是面上降湖了?"
+      },
+      {
+        "reference": "明天一个住黄淮宾馆",
+        "hypothesis": "明天一个主皇怀兵管。"
+      },
+      {
+        "reference": "七八把瑞士军刀呢惹我赖皮",
+        "hypothesis": "七八把瑞士军刀呢,揉我賴皮。"
+      },
+      {
+        "reference": "我也对小爱妹纸凶一次了扯平",
+        "hypothesis": "我也对小艾魅旨胸一次了车平。"
+      },
+      {
+        "reference": "雪云对你那么凶",
+        "hypothesis": "雪云对你那么凶。"
+      }
+    ]
+  }
+}
