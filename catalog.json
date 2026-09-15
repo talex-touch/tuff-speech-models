@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-15T14:48:24.701Z",
+  "models": [
+    {
+      "id": "tuff-asr-zh",
+      "version": "0.1.0",
+      "name": "Tuff ASR zh",
+      "engine": "whisper-cpp",
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "descriptor": "models/tuff-asr-zh/0.1.0/model.json",
+      "bytes": 147951465,
+      "sha256": "a06b133985f90319fd2e7c8bc02fba543aef34d09ac1e3fa59d86a131d7b2060",
+      "default": true,
+      "redistributable": true
+    },
+    {
+      "id": "whisper-base",
+      "version": "1.0.0",
+      "name": "Whisper Base (multilingual)",
+      "engine": "whisper-cpp",
+      "languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ],
+      "descriptor": "models/whisper-base/1.0.0/model.json",
+      "bytes": 147951465,
+      "sha256": "21f1a1e58e7e9ab686c8375a3fff2574d369136c1d351fdbfa73bf65b80a24d7",
+      "default": false,
+      "redistributable": true
+    },
+    {
+      "id": "whisper-tiny",
+      "version": "1.0.0",
+      "name": "Whisper Tiny (multilingual)",
+      "engine": "whisper-cpp",
+      "languages": [
+        "zh",
+        "en",
+        "ja",
+        "ko"
+      ],
+      "descriptor": "models/whisper-tiny/1.0.0/model.json",
+      "bytes": 77691713,
+      "sha256": "a65823f592862e122e3accfb363f552873c55d0467f715ea754cec30f95d706b",
+      "default": false,
+      "redistributable": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://talex-touch.dev/schemas/tuff-speech-catalog.schema.json",
+  "title": "Tuff Speech Model Catalog",
+  "description": "Root index of every model version this repository publishes. Tools regenerate it; it is never hand-edited. Tuff reads it to discover installable versions and to verify what a local install should contain.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "models"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "version", "name", "engine", "languages", "descriptor", "bytes", "sha256", "default"],
+        "properties": {
+          "id": { "type": "string" },
+          "version": { "type": "string" },
+          "name": { "type": "string" },
+          "engine": { "type": "string" },
+          "languages": { "type": "array", "items": { "type": "string" } },
+          "descriptor": {
+            "type": "string",
+            "description": "Repo-relative path to the version descriptor, e.g. models/whisper-base/1.0.0/model.json"
+          },
+          "bytes": { "type": "integer", "minimum": 1, "description": "Total download size (weights + auxiliary)." },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "description": "SHA-256 over the canonical bundle manifest, so a client can verify the whole version, not just the weights."
+          },
+          "default": {
+            "type": "boolean",
+            "description": "True for the single recommended version of this model id that a fresh install should pick."
+          },
+          "deprecated": { "type": "boolean" },
+          "redistributable": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "whisper-tiny",
+  "version": "1.0.0",
+  "name": "Whisper Tiny (multilingual)",
+  "description": "Multilingual Whisper tiny weights in ggml form, repackaged by Talex-Touch for the on-device Tuff speech runtime. Roughly 2x faster than whisper-base on the same host and sample, at the cost of accuracy. Not the recommended install: it exists as the low-latency / low-footprint fallback. Emits Traditional Chinese for zh audio, so the runtime must apply Simplified conversion.",
+  "engine": "whisper-cpp",
+  "engineMinVersion": "1.7.0",
+  "languages": ["zh", "en", "ja", "ko"],
+  "defaultLanguage": "zh",
+  "runtime": {
+    "kind": "ggml",
+    "file": "ggml-tiny.bin",
+    "bytes": 77691713,
+    "sha256": "be07e048e1e599ad46341c8d2a135645097a538221678b7acdd1b1919c6e1b21"
+  },
+  "quantization": "none",
+  "capabilities": {
+    "stream": true,
+    "upload": true,
+    "timestamps": true,
+    "punctuation": true,
+    "itn": false
+  },
+  "text": {
+    "script": "traditional",
+    "requiresSimplifiedConversion": true,
+    "punctuationPolicy": "model"
+  },
+  "source": {
+    "provider": "huggingface",
+    "repo": "ggerganov/whisper.cpp",
+    "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-tiny.bin",
+    "upstreamVersion": "whisper-tiny",
+    "derivedFrom": "openai/whisper-tiny"
+  },
+  "license": {
+    "spdx": "MIT",
+    "redistributable": true
+  },
+  "benchmark": {
+    "host": "Apple M4 Pro (arm64, Metal)",
+    "dataset": "macOS `say -v Tingting` synthetic Mandarin, 3.44 s",
+    "sampleCount": 1,
+    "rtf": 0.15,
+    "notes": "Same host and same single sample as whisper-base@1.0.0. Content transcribed correctly; script was Traditional. One sample only — treat the 2.2x latency ratio as directional, not a quality claim."
+  }
+}

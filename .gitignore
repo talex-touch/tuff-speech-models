@@ -1,0 +1,25 @@
+# Weight files are never committed: they are large, and their redistribution terms
+# belong to the upstream project recorded in each descriptor's license.spdx.
+*.bin
+*.gguf
+*.onnx
+*.tflite
+*.xml
+*.safetensors
+*.pt
+*.ckpt
+*.zip
+*.tar.gz
+
+# Downloads in progress / abandoned partials.
+*.part
+*.partial
+
+# A locally staged model store, if someone mirrors the install layout in-tree.
+speech-models/
+
+# Editors and OS.
+.DS_Store
+.idea/
+.vscode/
+*.swp

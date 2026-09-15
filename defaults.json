@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "description": "Hand-edited source of truth for the catalog's `default` flag. Maps a model id to the version a fresh Tuff install should pick. A model id that is absent here has no recommended version; its versions stay installable by explicit id@version. Exactly one entry across the whole file is allowed to be the catalog-wide default, because Tuff installs exactly one speech model on first run.",
+  "defaults": {
+    "tuff-asr-zh": "0.1.0"
+  }
+}

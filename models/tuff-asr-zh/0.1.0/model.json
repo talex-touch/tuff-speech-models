@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "tuff-asr-zh",
+  "version": "0.1.0",
+  "name": "Tuff ASR zh",
+  "description": "Talex-Touch's own Mandarin speech line. 0.1.0 ships the MIT-licensed whisper-base ggml weights unchanged, wrapped in a Tuff-owned delivery policy: zh-first language profile plus mandatory Simplified-Chinese post-conversion. This is the version a fresh Tuff install picks. It has no independently measured benchmark of its own yet; see docs/versions/tuff-asr-zh-0.1.0.md.",
+  "engine": "whisper-cpp",
+  "engineMinVersion": "1.7.0",
+  "languages": ["zh", "en"],
+  "defaultLanguage": "zh",
+  "runtime": {
+    "kind": "ggml",
+    "file": "ggml-base.bin",
+    "bytes": 147951465,
+    "sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe"
+  },
+  "quantization": "none",
+  "capabilities": {
+    "stream": true,
+    "upload": true,
+    "timestamps": true,
+    "punctuation": true,
+    "itn": false
+  },
+  "text": {
+    "script": "traditional",
+    "requiresSimplifiedConversion": true,
+    "punctuationPolicy": "model"
+  },
+  "source": {
+    "provider": "huggingface",
+    "repo": "ggerganov/whisper.cpp",
+    "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin",
+    "upstreamVersion": "whisper-base",
+    "derivedFrom": "whisper-base@1.0.0"
+  },
+  "license": {
+    "spdx": "MIT",
+    "redistributable": true
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://talex-touch.dev/schemas/tuff-speech-model.schema.json",
+  "title": "Tuff Speech Model Descriptor",
+  "description": "Describes one immutable speech-recognition model version that the Tuff main runtime can load and run on-device. One descriptor = one version. Descriptors are never edited in place; a new version gets a new file under models/<id>/<version>/model.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "name",
+    "engine",
+    "languages",
+    "runtime",
+    "capabilities",
+    "license"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1,
+      "description": "Descriptor format version. Bump only for breaking field changes."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,62}$",
+      "description": "Stable model family id. Shared across versions."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the model bundle."
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "description": { "type": "string", "maxLength": 600 },
+
+    "engine": {
+      "type": "string",
+      "enum": ["whisper-cpp", "sherpa-onnx", "onnxruntime"],
+      "description": "Runtime engine that executes the weights. Tuff dispatches on this value."
+    },
+    "engineMinVersion": {
+      "type": "string",
+      "description": "Minimum engine build the bundle was validated against."
+    },
+
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "BCP-47-ish language tags the bundle is validated for, strongest first."
+    },
+    "defaultLanguage": { "type": "string" },
+
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "file", "bytes", "sha256"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["ggml", "onnx", "tflite", "openvino"],
+          "description": "Weight container format."
+        },
+        "file": {
+          "type": "string",
+          "description": "Path of the weight file, relative to the version directory. Never absolute, never escaping the bundle."
+        },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "SHA-256 of the weight file. Mandatory: a bundle without a verified digest must never load."
+        }
+      }
+    },
+
+    "auxiliary": {
+      "type": "array",
+      "description": "Optional extra files shipped beside the weights (VAD, simplified-Chinese dictionary, hotword list).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "file", "bytes", "sha256"],
+        "properties": {
+          "role": { "type": "string", "enum": ["vad", "dict", "hotwords", "tokenizer", "punctuation"] },
+          "file": { "type": "string" },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+
+    "quantization": {
+      "type": "string",
+      "description": "Quantization scheme actually present in the weights, e.g. none/f16/q8_0/q5_1/int8."
+    },
+
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stream", "upload"],
+      "properties": {
+        "stream": { "type": "boolean", "description": "Can emit partial hypotheses while audio is still arriving." },
+        "upload": { "type": "boolean", "description": "Can transcribe a finished file/byte buffer." },
+        "timestamps": { "type": "boolean" },
+        "punctuation": { "type": "boolean", "description": "Model itself emits punctuation." },
+        "itn": { "type": "boolean", "description": "Model performs inverse text normalization (spoken number -> digit)." }
+      }
+    },
+
+    "text": {
+      "type": "object",
+      "description": "Output-text properties the runtime must compensate for. Whisper, for example, emits Traditional Chinese for zh audio.",
+      "additionalProperties": false,
+      "properties": {
+        "script": { "type": "string", "enum": ["unknown", "simplified", "traditional", "mixed"] },
+        "requiresSimplifiedConversion": {
+          "type": "boolean",
+          "description": "Runtime must post-convert output to Simplified Chinese before delivery."
+        },
+        "punctuationPolicy": {
+          "type": "string",
+          "enum": ["model", "strip", "runtime"],
+          "description": "Who owns final punctuation: the model, the formatter (strip), or a runtime post-processor."
+        }
+      }
+    },
+
+    "source": {
+      "type": "object",
+      "description": "Provenance. Required for redistributed third-party weights; omitted for weights trained by Talex-Touch.",
+      "additionalProperties": false,
+      "properties": {
+        "provider": { "type": "string" },
+        "repo": { "type": "string" },
+        "url": { "type": "string" },
+        "upstreamVersion": { "type": "string" },
+        "derivedFrom": { "type": "string", "description": "Model id@version this bundle was derived from, if any." }
+      }
+    },
+
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spdx", "redistributable"],
+      "properties": {
+        "spdx": { "type": "string" },
+        "redistributable": {
+          "type": "boolean",
+          "description": "True only when the license permits this repository to host the weights. A false value means the tooling must refuse to publish the bundle."
+        },
+        "noticePath": { "type": "string" }
+      }
+    },
+
+    "benchmark": {
+      "type": "object",
+      "description": "Measured on the recorded host. Never estimated.",
+      "additionalProperties": false,
+      "properties": {
+        "host": { "type": "string" },
+        "dataset": { "type": "string" },
+        "sampleCount": { "type": "integer", "minimum": 0 },
+        "cer": { "type": "number", "minimum": 0 },
+        "rtf": { "type": "number", "minimum": 0 },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
