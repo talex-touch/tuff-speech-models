@@ -55,6 +55,15 @@ descriptor, or attached to a release artifact.
   the download URL and, when relevant, the id@version they were derived from.
   Weights Talex-Touch trains itself omit `source` provenance fields that do not
   apply and still declare a `source.url` for distribution.
+- Bundles that need more than one file — a recognizer plus its tokenizer, say —
+  declare the extras in `auxiliary`, and **every** auxiliary entry carries its
+  own `url`. This is required rather than optional because the fetcher resolves
+  one URL per file: an auxiliary file with no URL makes the whole version
+  uninstallable, and a bundle that cannot be installed must not be published.
+  `verify-catalog.mjs` enforces it through the schema, so the mistake fails at
+  publication instead of at a user's first fetch. Note that `url` is a
+  distribution detail and is deliberately *not* part of the canonical bundle
+  manifest, so adding or correcting one never changes a published digest.
 
 `defaults.json` is the source of truth for the catalog's `default` flag:
 

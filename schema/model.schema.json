@@ -95,12 +95,17 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["role", "file", "bytes", "sha256"],
+        "required": ["role", "file", "bytes", "sha256", "url"],
         "properties": {
           "role": { "type": "string", "enum": ["vad", "dict", "hotwords", "tokenizer", "punctuation"] },
           "file": { "type": "string" },
           "bytes": { "type": "integer", "minimum": 1 },
-          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "url": {
+            "type": "string",
+            "pattern": "^https://",
+            "description": "Where to fetch this file. Required, because the fetcher resolves one URL per file and an auxiliary file with no URL makes the whole version uninstallable — a bundle that cannot be installed must not be published."
+          }
         }
       }
     },

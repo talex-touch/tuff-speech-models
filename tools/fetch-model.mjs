@@ -251,12 +251,18 @@ async function main() {
     const label = fileSpec.role === 'weights'
       ? `${entry.id}@${entry.version} weights`
       : `${entry.id}@${entry.version} ${fileSpec.role}`;
-    const url = fileSpec.role === 'weights' ? descriptor.source?.url : fileSpec.url;
+    // The canonical manifest — which is what the catalog hashes — deliberately carries only what
+    // a client verifies: file, bytes, digest. Where a file is downloaded from is a distribution
+    // detail, so it is read from the descriptor rather than from `bundleFiles`, whose projection
+    // would otherwise have to grow a field that must not affect a published digest.
+    const url = fileSpec.role === 'weights'
+      ? descriptor.source?.url
+      : (descriptor.auxiliary ?? []).find((item) => item.file === fileSpec.file)?.url;
     if (!url) {
       const present = existsSync(path.join(targetDir, fileSpec.file));
       if (present) continue;
       fail(
-        `${label}: no download URL — ${entry.descriptor} has no source.url for "${fileSpec.file}". `
+        `${label}: no download URL — ${entry.descriptor} has no ${fileSpec.role === 'weights' ? 'source.url' : `auxiliary url for "${fileSpec.file}"`}. `
           + 'This file must be shipped with the model bundle; it cannot be fetched.',
       );
     }
