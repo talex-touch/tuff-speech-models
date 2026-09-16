@@ -44,6 +44,20 @@
       "description": "Minimum engine build the bundle was validated against."
     },
 
+    "sherpa": {
+      "type": "object",
+      "description": "Required when engine is sherpa-onnx: which recognizer family these weights belong to. sherpa-onnx hosts several unrelated families, each with its own flags, so the runtime refuses a bundle whose family it cannot drive rather than constructing a recognizer from the wrong ones.",
+      "additionalProperties": false,
+      "required": ["family"],
+      "properties": {
+        "family": {
+          "type": "string",
+          "enum": ["sense-voice"],
+          "description": "Recognizer family. Grows as the runtime implements more families."
+        }
+      }
+    },
+
     "languages": {
       "type": "array",
       "minItems": 1,

@@ -239,8 +239,18 @@ value, so `git diff` never shows churn from a rebuild.
 | `tuff-asr-zh-tiny` | 0.1.0 | `whisper-cpp` | MIT | no | [docs/versions/tuff-asr-zh-tiny-0.1.0.md](./docs/versions/tuff-asr-zh-tiny-0.1.0.md) |
 | `whisper-base` | 1.0.0 | `whisper-cpp` | MIT | no | [docs/versions/whisper-base-1.0.0.md](./docs/versions/whisper-base-1.0.0.md) |
 | `whisper-tiny` | 1.0.0 | `whisper-cpp` | MIT | no | [docs/versions/whisper-tiny-1.0.0.md](./docs/versions/whisper-tiny-1.0.0.md) |
+| `sense-voice-small` | 1.0.0 | `sherpa-onnx` | Apache-2.0 | no | [docs/versions/sense-voice-small-1.0.0.md](./docs/versions/sense-voice-small-1.0.0.md) |
 
 ## Requirements
 
 Node.js 18 or newer (for `fetch`, `node:fs/promises`, ESM). No dependencies, no
 lockfile, no network access during `verify-catalog.mjs`.
+
+A bundle also names the executable its engine needs on the host, exactly as a
+descriptor names the weights: `whisper-cpp` bundles need `whisper-cli`, and
+`sherpa-onnx` bundles need `sherpa-onnx-offline`. Tuff resolves that executable
+before the user speaks and reports a missing one as unavailability rather than as
+a decode failure. Publishing a bundle whose engine the runtime cannot drive is
+therefore not a neutral act: it is a promise about an executable and a
+recognizer family, which is why `sherpa-onnx` descriptors carry a required
+`sherpa.family` and are rejected at load when this build cannot drive that family.
